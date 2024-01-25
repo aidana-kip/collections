@@ -1,0 +1,658 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.light {
+  --container-background: lightgray;
+  --authorization-box-background: rgb(202, 242, 237);
+  --btn-background: rgb(219, 226, 234);
+  --th-background: rgb(160, 219, 228);
+  --th-text: black;
+  --td-text: black;
+  --tr-background: #f2f2f2;
+  --tr-hover-background: #ddd;
+  --collections-link-background: hsl(187, 53%, 69%);
+  --modify-box-background: rgb(160, 219, 228);
+  --span: violet;
+  --addbtn-background: white;
+  --edit-form-background: rgb(160, 219, 228);
+  --edit_form_header: black;
+  --editName: black;
+  --editDescription: black;
+  --editTopic: black;
+}
+
+.dark {
+  --container-background: #465674;
+  --authorization-box-background: #8ec0da;
+  --btn-background: rgb(82, 93, 106);
+  --btn-text: rgb(200, 207, 215);
+  --th-background: rgb(51, 50, 86);
+  --th-text: rgb(200, 207, 215);
+  --td-text: rgb(200, 207, 215);
+  --tr-background: rgb(115, 129, 146);
+  --tr-hover-background: #8b8594;
+  --collections-link-background: hsl(186, 5%, 58%);
+  --modify-box-background: rgb(82, 93, 106);
+  --span: red;
+  --addbtn-background: rgb(115, 129, 146);
+  --edit-form-background: rgb(62, 62, 111);
+  --edit_form_header: rgb(200, 207, 215);
+  --editName: rgb(200, 207, 215);
+  --editDescription: rgb(200, 207, 215);
+  --editTopic: rgb(200, 207, 215);
+}
+
+.container {
+  background-color: var(--container-background);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth_container {
+  background-color: lightgray;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth_btn {
+  margin: 5px 0 0 5px;
+  padding: 3px;
+  background-color: rgb(219, 226, 234);
+  color: var(--btn-text);
+  border-radius: 5px;
+  height: 200;
+}
+
+.authorization__box {
+  background-color: rgb(202, 242, 237);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 400px;
+  height: 400px;
+  border-radius: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  gap: 4px;
+}
+
+h1 {
+  margin-top: 30px;
+}
+
+span {
+  margin-top: 100px;
+  color: var(--span);
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.head {
+  font-size: 35px;
+}
+
+.firstName,
+.lastName,
+.email {
+  margin-bottom: 10px;
+}
+
+.password {
+  left: -10px;
+  position: relative;
+  left: -24px;
+}
+
+h3 {
+  margin-right: 10px;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 90px;
+  top: 20px;
+}
+
+.languages {
+  position: absolute;
+  margin-top: 10px;
+  right: 120px;
+  top: 40px;
+}
+.eng,
+.rus {
+  background-color: var(--btn-background);
+  color: var(--btn-text);
+  border-radius: 3px;
+  margin-left: 2px;
+}
+
+.addBtn {
+  background-color: var(--addbtn-background);
+  color: var(--btn-text);
+  width: 150px;
+  height: 35px;
+  border-radius: 5px;
+  border-color: #777e82;
+}
+
+.mode-switch {
+  background-color: var(--btn-background);
+  color: var(--btn-text);
+  width: 70px;
+  height: 40px;
+  position: absolute;
+  margin-top: 10px;
+  right: 120px;
+  top: 70px;
+  border-radius: 5px;
+}
+
+.btn {
+  margin: 5px 0 0 5px;
+  padding: 3px;
+  background-color: var(--btn-background);
+  color: var(--btn-text);
+  border-radius: 5px;
+  height: 200;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.addBtn {
+  margin-top: 30px;
+}
+
+#users,
+#collections {
+  margin-top: 50px;
+  text-align: center;
+  border-collapse: collapse;
+  width: 100vh;
+  height: 20vh;
+}
+
+#users th,
+#collections th {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: var(--th-background);
+  color: var(--th-text);
+}
+
+#users tr:nth-child(odd),
+#collections tr:nth-child(odd) {
+  background-color: var(--tr-background);
+}
+
+#users td,
+#collections td {
+  font-size: 18px;
+  color: var(--td-text);
+}
+
+#users tr,
+#collections tr:hover {
+  background-color: var(--tr-hover-background);
+}
+
+.collections_link {
+  margin-top: 20px;
+  background-color: var(--collections-link-background);
+  padding: 10px 20px;
+  text-align: center;
+  width: 200px;
+}
+
+.modify_box {
+  background-color: var(--modify-box-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 300px;
+  height: 250px;
+  border-radius: 20px;
+}
+
+.formBtns {
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  gap: 20px;
+}
+
+.edit_form_box {
+  background-color: var(--edit-form-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 270px;
+  border-radius: 10px;
+  padding-bottom: 20px;
+}
+
+.see_form_box {
+  background-color: var(--edit-form-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 250px;
+  border-radius: 10px;
+  padding-bottom: 20px;
+}
+
+.edit_form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  color: var(--edit_form_header);
+}
+
+.edit_form_header {
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: var(--edit_form_header);
+}
+
+.editComment {
+  margin-top: 10px;
+}
+.comment {
+  width: 200px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.editCommentForm {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search_input {
+  flex-basis: 200px;
+  height: 25px;
+  border-radius: 3px;
+}
+
+.search_btn {
+  flex-basis: 50px;
+  height: 25px;
+}
+.searchDiv {
+  display: flex;
+  margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+  #users,
+  #collections {
+    width: 800px;
+    font-size: 15px;
+  }
+
+  .editComment {
+    height: 100px;
+  }
+  .edit_form_box {
+    height: 270px;
+  }
+  .edit_form_header {
+    font-size: 20px;
+  }
+  .btn {
+    margin: 0px;
+    padding: 1px;
+  }
+  .comment {
+    height: 40px;
+  }
+  .table {
+    height: 300px;
+  }
+  span {
+    margin-top: 50px;
+    gap: 10px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 850px) {
+  #users,
+  #collections {
+    width: 750px;
+  }
+
+  #collections tbody {
+    font-size: 8px;
+  }
+
+  .editComment {
+    height: 90px;
+  }
+  .edit_form_box {
+    height: 220px;
+  }
+
+  .see_form_box {
+    height: 160px;
+  }
+
+  .editCommentForm {
+    margin-top: 7px;
+  }
+  .btn {
+    margin: 1px 0 0 0px;
+    padding: 2px;
+  }
+  .edit_form_header {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+  span {
+    margin-top: 60px;
+  }
+  .user {
+    font-size: 15px;
+  }
+  .eng,
+  .rus {
+    font-size: 10px;
+  }
+  .mode-switch {
+    font-size: 12px;
+    width: 55px;
+    height: 35px;
+  }
+  #collections td,
+  #users td {
+    font-size: 13px;
+  }
+  .user {
+    right: 50px;
+  }
+  .mode-switch {
+    right: 90px;
+  }
+  .languages {
+    right: 90px;
+  }
+}
+
+@media (max-width: 830px) {
+  .user {
+    right: 40px;
+  }
+  .mode-switch {
+    right: 80px;
+  }
+  .languages {
+    right: 80px;
+  }
+}
+
+@media (max-width: 770px) {
+  #users,
+  #collections {
+    width: 630px;
+  }
+  .table {
+    margin-top: 20px;
+  }
+  .search_form {
+    width: 150px;
+  }
+  .search_btn {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 680px) {
+  #users,
+  #collections {
+    width: 570px;
+  }
+  .user {
+    right: 40px;
+  }
+  .mode-switch {
+    right: 60px;
+  }
+  .languages {
+    right: 60px;
+  }
+}
+@media (max-width: 630px) {
+  #users,
+  #collections {
+    width: 520px;
+  }
+  .user {
+    right: 30px;
+  }
+  .mode-switch {
+    right: 40px;
+  }
+  .languages {
+    right: 40px;
+  }
+  span {
+    font-size: 14px;
+  }
+}
+@media (max-width: 580px) {
+  .user {
+    right: 10px;
+  }
+  .mode-switch {
+    right: 20px;
+  }
+  .languages {
+    right: 20px;
+  }
+  .btn {
+    font-size: 10px;
+  }
+  #users th,
+  #collections th {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 555px) {
+  #users,
+  #collections {
+    width: 450px;
+  }
+  span {
+    margin-top: 50px;
+    gap: 7px;
+    font-size: 12px;
+  }
+  .user {
+    right: 8px;
+  }
+  .mode-switch {
+    font-size: 10px;
+    width: 40px;
+    height: 30px;
+    right: 20px;
+  }
+  .languages {
+    right: 15px;
+  }
+  .edit_form_header {
+    font-size: 15px;
+  }
+  label {
+    font-size: 12px;
+  }
+  .edit_form_box {
+    width: 300px;
+    height: 230px;
+  }
+  .searchDiv {
+    flex-direction: column;
+  }
+  .search_input {
+    flex-basis: 1px;
+    width: 100px;
+  }
+  .search_btn {
+    flex-basis: 1px;
+    width: 50px;
+  }
+  #users th,
+  #collections th {
+    font-size: 10px;
+  }
+  .addBtn {
+    width: 120px;
+  }
+  #collections td,
+  #users td {
+    font-size: 12px;
+  }
+  .table {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 460px) {
+  #users,
+  #collections {
+    width: 400px;
+  }
+  span {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  .user {
+    font-size: 11px;
+  }
+  .mode-switch {
+    font-size: 8px;
+    width: 34px;
+    height: 22px;
+  }
+  .eng,
+  .rus {
+    font-size: 8px;
+  }
+  #collections td,
+  #users td {
+    font-size: 11px;
+  }
+  .btn {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 420px) {
+  #users,
+  #collections {
+    width: 380px;
+  }
+  #users th,
+  #collections th {
+    font-size: 9px;
+  }
+  #collections td,
+  #users td {
+    font-size: 9px;
+  }
+  .btn {
+    font-size: 9px;
+  }
+
+  .addBtn {
+    width: 80px;
+    font-size: 10px;
+    margin-top: 10px;
+  }
+  .edit_form_box {
+    width: 250px;
+    height: 210px;
+  }
+  .edit_form_header {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+  label {
+    font-size: 10px;
+  }
+  .table {
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 390px) {
+  #users,
+  #collections {
+    width: 350px;
+  }
+  .table {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  #users,
+  #collections {
+    width: 320px;
+  }
+  #users th,
+  #collections th {
+    font-size: 7px;
+  }
+  #collections td,
+  #users td {
+    font-size: 7px;
+  }
+  .btn {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 340px) {
+  #users,
+  #collections {
+    width: 310px;
+  }
+}
+
+@media (max-width: 320px) {
+  #users,
+  #collections {
+    width: 300px;
+  }
+}
